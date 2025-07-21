@@ -1,0 +1,14 @@
+package com.webApp.eStore;
+
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HomeController {
+
+    @RequestMapping("/")
+    public String greet(){
+        return "Hello to the new project!";
+    }
+}
