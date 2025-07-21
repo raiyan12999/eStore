@@ -1,10 +1,12 @@
 package com.webApp.eStore.service;
 
 import com.webApp.eStore.model.Product;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Service
 public class ProductService {
 
 //    Product product1 = new Product(101, "Laptop", 3000);
