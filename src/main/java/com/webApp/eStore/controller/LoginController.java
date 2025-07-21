@@ -1,4 +1,4 @@
-package com.webApp.eStore;
+package com.webApp.eStore.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,4 +10,11 @@ public class LoginController {
     public String login(){
         return "This is a login page";
     }
+
+    @RequestMapping("/about")
+    public String about(){
+        return "This is the about page";
+    }
+
+
 }

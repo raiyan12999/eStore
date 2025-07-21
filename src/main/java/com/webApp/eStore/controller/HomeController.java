@@ -1,4 +1,4 @@
-package com.webApp.eStore;
+package com.webApp.eStore.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
