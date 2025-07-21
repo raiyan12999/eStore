@@ -3,8 +3,7 @@ package com.webApp.eStore.controller;
 import com.webApp.eStore.model.Product;
 import com.webApp.eStore.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,8 +13,13 @@ public class ProductController {
     @Autowired
     ProductService service;
 
-    @RequestMapping("/products")
+    @GetMapping ("/products")
     public List<Product> getAllProducts(){
         return service.getProducts();
+    }
+
+    @PostMapping("/products")
+    public void addAProduct(@RequestBody Product prod){
+        service.addProduct(prod);
     }
 }
