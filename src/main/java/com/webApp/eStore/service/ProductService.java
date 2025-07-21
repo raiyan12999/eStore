@@ -9,15 +9,15 @@ import java.util.List;
 @Service
 public class ProductService {
 
-//    Product product1 = new Product(101, "Laptop", 3000);
-//    Product product2 = new Product(102, "Desktop", 5000);
-//    Product product3 = new Product(103, "Phone", 4000);
-//
-//    List<Product> products = Arrays.asList(product1, product2, product3);
+    Product product1 = new Product(101, "Laptop", 3000);
+    Product product2 = new Product(102, "Desktop", 5000);
+    Product product3 = new Product(103, "Phone", 4000);
 
-    List<Product> products = Arrays.asList(new Product(101, "Laptop", 3000),
-                                            new Product(102, "Desktop", 5000),
-                                            new Product(103, "Phone", 2000));
+    List<Product> products = Arrays.asList(product1, product2, product3);
+
+//    List<Product> products = Arrays.asList(new Product(101, "Laptop", 3000),
+//                                            new Product(102, "Desktop", 5000),
+//                                            new Product(103, "Phone", 2000));
 
     public List<Product> getProducts(){
         return products;
