@@ -18,6 +18,11 @@ public class ProductController {
         return service.getProducts();
     }
 
+    @GetMapping("/products/{prodId}")
+    public Product getAProductById(@PathVariable int prodId){
+        return service.getProductById(prodId);
+    }
+
     @PostMapping("/products")
     public void addAProduct(@RequestBody Product prod){
         service.addProduct(prod);
