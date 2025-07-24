@@ -1,18 +1,27 @@
 package com.webApp.eStore.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import org.springframework.stereotype.Component;
+
+@Component
+@Entity
 public class Product {
 
+    @Id
     private int prodId;
     private String name;
-    private int value;
+    private int price;
 
-    public Product(int prodId, String name, int value){
+    public Product(int prodId, String name, int price){
         this.prodId = prodId;
         this.name = name;
-        this.value = value;
+        this.price = price;
     }
 
+    public Product() {
 
+    }
 
 
     public int getProdId() {
@@ -31,11 +40,11 @@ public class Product {
         return name;
     }
 
-    public int getValue() {
-        return value;
+    public int getPrice() {
+        return price;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setPrice(int price) {
+        this.price = price;
     }
 }
