@@ -3,6 +3,7 @@ package com.webApp.eStore.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import org.springframework.stereotype.Component;
+import java.util.Date;
 
 @Component
 @Entity
@@ -12,11 +13,21 @@ public class Product {
     private int prodId;
     private String name;
     private int price;
+    private String desc;
+    private String category;
+    private Date releaseDate;
+    private boolean availability;
+    private int quantity;
 
-    public Product(int prodId, String name, int price){
+    public Product(int prodId, String name, int price, String desc, String category, Date releaseDate, boolean availability, int quantity){
         this.prodId = prodId;
         this.name = name;
         this.price = price;
+        this.desc = desc;
+        this.category = category;
+        this.releaseDate = releaseDate;
+        this.availability = availability;
+        this.quantity = quantity;
     }
 
     public Product() {
@@ -46,5 +57,46 @@ public class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Date getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public boolean isAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(boolean availability) {
+        this.availability = availability;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
