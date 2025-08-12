@@ -1,0 +1,12 @@
+-- Insert sample products into the Product table
+INSERT INTO Product (prod_id, name, price, desc, category, release_date, availability, quantity) VALUES
+(1, 'iPhone 15', 999, 'Latest Apple smartphone with A17 Pro chip', 'Electronics', '2023-09-15', true, 50),
+(2, 'Samsung Galaxy S24', 899, 'Flagship Android phone with AI features', 'Electronics', '2024-01-17', true, 35),
+(3, 'MacBook Air M2', 1299, '13-inch laptop with M2 chip and 8GB RAM', 'Computers', '2023-06-06', true, 25),
+(4, 'Sony WH-1000XM5', 399, 'Wireless noise-canceling headphones', 'Audio', '2022-05-12', true, 75),
+(5, 'Dell XPS 13', 1199, 'Ultrabook with Intel Core i7 processor', 'Computers', '2023-03-20', true, 20),
+(6, 'iPad Pro 12.9', 1099, 'Professional tablet with M2 chip', 'Tablets', '2022-10-18', true, 30),
+(7, 'Nintendo Switch OLED', 349, 'Gaming console with OLED screen', 'Gaming', '2021-10-08', false, 0),
+(8, 'AirPods Pro 2nd Gen', 249, 'Wireless earbuds with active noise cancellation', 'Audio', '2022-09-23', true, 100),
+(9, 'LG OLED C3 55-inch', 1499, '4K Smart TV with OLED display', 'Electronics', '2023-04-10', true, 15),
+(10, 'Logitech MX Master 3S', 99, 'Wireless mouse for productivity', 'Accessories', '2022-08-25', true, 60);
