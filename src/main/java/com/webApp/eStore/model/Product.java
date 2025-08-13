@@ -13,17 +13,17 @@ public class Product {
     private int prodId;
     private String name;
     private int price;
-    private String desc;
+    private String description;
     private String category;
     private Date releaseDate;
     private boolean availability;
     private int quantity;
 
-    public Product(int prodId, String name, int price, String desc, String category, Date releaseDate, boolean availability, int quantity){
+    public Product(int prodId, String name, int price, String description, String category, Date releaseDate, boolean availability, int quantity){
         this.prodId = prodId;
         this.name = name;
         this.price = price;
-        this.desc = desc;
+        this.description = description;
         this.category = category;
         this.releaseDate = releaseDate;
         this.availability = availability;
@@ -60,12 +60,12 @@ public class Product {
     }
 
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCategory() {
