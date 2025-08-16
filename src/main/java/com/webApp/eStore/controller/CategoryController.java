@@ -19,6 +19,11 @@ public class CategoryController {
     @Autowired
     public CategoryService service;
 
+    @GetMapping("/test")
+    public String testing(){
+        return "Hello from categoryRepo Branch";
+    }
+
     @GetMapping("/categories")
     public List<Category> getCategory(){
         return service.getAllCategory();
