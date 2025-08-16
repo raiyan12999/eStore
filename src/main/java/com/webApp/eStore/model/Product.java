@@ -18,8 +18,9 @@ public class Product {
     private Date releaseDate;
     private boolean availability;
     private int quantity;
+    private String brand;
 
-    public Product(int prodId, String name, int price, String description, String category, Date releaseDate, boolean availability, int quantity){
+    public Product(int prodId, String name, int price, String description, String category, Date releaseDate, boolean availability, int quantity, String brand){
         this.prodId = prodId;
         this.name = name;
         this.price = price;
@@ -28,6 +29,7 @@ public class Product {
         this.releaseDate = releaseDate;
         this.availability = availability;
         this.quantity = quantity;
+        this.brand = brand;
     }
 
     public Product() {
@@ -98,5 +100,13 @@ public class Product {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 }
