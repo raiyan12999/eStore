@@ -1,7 +1,6 @@
 package com.webApp.eStore.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 import java.util.Date;
 
@@ -14,13 +13,15 @@ public class Product {
     private String name;
     private int price;
     private String description;
-    private String category;
+
+    @ManyToOne
+    private Category category;
     private Date releaseDate;
     private boolean availability;
     private int quantity;
     private String brand;
 
-    public Product(int prodId, String name, int price, String description, String category, Date releaseDate, boolean availability, int quantity, String brand){
+    public Product(int prodId, String name, int price, String description, Category category, Date releaseDate, boolean availability, int quantity, String brand){
         this.prodId = prodId;
         this.name = name;
         this.price = price;
@@ -35,6 +36,9 @@ public class Product {
     public Product() {
 
     }
+
+    @OneToOne(mappedBy = "product")
+    private ProductDetails productDetails;
 
 
     public int getProdId() {
@@ -70,11 +74,11 @@ public class Product {
         this.description = description;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
@@ -108,5 +112,13 @@ public class Product {
 
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    public ProductDetails getProductDetails() {
+        return productDetails;
+    }
+
+    public void setProductDetails(ProductDetails productDetails) {
+        this.productDetails = productDetails;
     }
 }
