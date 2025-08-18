@@ -21,6 +21,9 @@ public class Product {
     private int quantity;
     private String brand;
 
+    @OneToOne(mappedBy = "product")
+    private ProductDetails details;
+
     public Product(int prodId, String name, int price, String description, Category category, Date releaseDate, boolean availability, int quantity, String brand){
         this.prodId = prodId;
         this.name = name;
@@ -37,8 +40,7 @@ public class Product {
 
     }
 
-    @OneToOne(mappedBy = "product")
-    private ProductDetails productDetails;
+
 
 
     public int getProdId() {
@@ -114,11 +116,11 @@ public class Product {
         this.brand = brand;
     }
 
-    public ProductDetails getProductDetails() {
-        return productDetails;
+    public ProductDetails getDetails() {
+        return details;
     }
 
-    public void setProductDetails(ProductDetails productDetails) {
-        this.productDetails = productDetails;
+    public void setDetails(ProductDetails details) {
+        this.details = details;
     }
 }
