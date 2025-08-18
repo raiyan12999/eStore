@@ -10,15 +10,17 @@ public class Test {
 
     @Id
     private int id;
-    private String name;
+//    private String name;
+    private String age;
 
     public Test(){
 
     }
 
-    public Test(int id, String name){
+    public Test(int id, String age){
         this.id = id;
-        this.name = name;
+//        this.name = name;
+        this.age = age;
     }
 
 
@@ -30,11 +32,19 @@ public class Test {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+
+    public String getAge() {
+        return age;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAge(String age) {
+        this.age = age;
     }
 }
