@@ -1,6 +1,8 @@
 package com.webApp.eStore.service;
 
 import com.webApp.eStore.model.Product;
+import com.webApp.eStore.model.ProductDetails;
+import com.webApp.eStore.repository.ProductDetailsRepo;
 import com.webApp.eStore.repository.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,9 @@ public class ProductService {
 
     @Autowired
     ProductRepo repo;
+
+    @Autowired
+    ProductDetailsRepo detailsRepo;
 
 
 
@@ -35,5 +40,15 @@ public class ProductService {
 
     public void deleteProduct(int prodId){
         repo.deleteById(prodId);
+    }
+
+    public void createProductWithDetails(Product prod, ProductDetails details){
+        prod.setDetails(details);
+
+        details.setProduct(prod);
+        detailsRepo.save(details);
+        repo.save(prod);
+
+        // Questions here
     }
 }

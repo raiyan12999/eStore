@@ -30,6 +30,11 @@ public class ProductController {
         service.addProduct(prod);
     }
 
+    @PostMapping("/products-with-details")
+    public void addProductWithDetails(@RequestBody Product prod){
+        service.createProductWithDetails(prod, prod.getDetails());
+    }
+
     @PutMapping("/products")
     public void updateAProduct(@RequestBody Product prod){
         service.updateProduct(prod);

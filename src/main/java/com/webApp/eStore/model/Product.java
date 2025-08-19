@@ -9,6 +9,7 @@ import java.util.Date;
 public class Product {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int prodId;
     private String name;
     private int price;
@@ -24,8 +25,7 @@ public class Product {
     @OneToOne(mappedBy = "product")
     private ProductDetails details;
 
-    public Product(int prodId, String name, int price, String description, Category category, Date releaseDate, boolean availability, int quantity, String brand){
-        this.prodId = prodId;
+    public Product(String name, int price, String description, Category category, Date releaseDate, boolean availability, int quantity, String brand){
         this.name = name;
         this.price = price;
         this.description = description;
