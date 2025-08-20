@@ -44,8 +44,10 @@ public class ProductService {
 
     public void createProductWithDetails(Product prod, ProductDetails details){
         prod.setDetails(details);
-
-        details.setProduct(prod);
+        System.out.println("Details inside product: " + prod.getDetails().getWeight());
+        System.out.println("Details info: " + details.getWeight() + details.getColor());
+        System.out.println("Product info: " + prod.getName());
+//        details.setProduct(prod);
         detailsRepo.save(details);
         repo.save(prod);
 

@@ -1,4 +1,4 @@
-package com.webApp.eStore.controller;
+package com.webApp.eStore.service;
 
 import com.webApp.eStore.model.ProductDetails;
 import com.webApp.eStore.repository.ProductDetailsRepo;
@@ -15,5 +15,9 @@ public class ProductDetailsService {
 
     public List<ProductDetails> getAllProductDetails(){
         return repo.findAll();
+    }
+
+    public void addDetails(ProductDetails details) {
+        repo.save(details);
     }
 }
