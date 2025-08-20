@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Entity
 public class ProductDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String weight;
