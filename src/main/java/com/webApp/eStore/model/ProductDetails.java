@@ -1,5 +1,6 @@
 package com.webApp.eStore.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +17,7 @@ public class ProductDetails {
     // Relationship field - this is the owning side
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "product_id")
+    @JsonBackReference
     private Product product;
 
     public ProductDetails(){

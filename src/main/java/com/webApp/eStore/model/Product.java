@@ -1,5 +1,6 @@
 package com.webApp.eStore.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 import java.util.Date;
@@ -23,6 +24,7 @@ public class Product {
     private String brand;
 
     @OneToOne(mappedBy = "product")
+    @JsonManagedReference
     private ProductDetails details;
 
     public Product(String name, int price, String description, Category category, Date releaseDate, boolean availability, int quantity, String brand){
