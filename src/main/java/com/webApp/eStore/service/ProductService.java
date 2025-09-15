@@ -27,7 +27,14 @@ public class ProductService {
     }
 
     public void addProduct (Product prod){
-        repo.save(prod);
+        ProductDetails details = prod.getDetails();
+        if (details != null){
+            prod.setDetails(details);
+            details.setProduct(prod);
+            detailsRepo.save(details);
+        } else {
+            repo.save(prod);
+        }
     }
 
     public Product getProductById(int prodId) {
