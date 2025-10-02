@@ -30,4 +30,10 @@ public class CategoryController {
     public void addCategory(@RequestBody Category category) {
         service.addACategory(category);
     }
+
+    @DeleteMapping("categories/{id}")
+    public void deleteACategory(@PathVariable int id){
+        service.deleteCategory(id);
+    }
+
 }

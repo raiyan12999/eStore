@@ -20,4 +20,8 @@ public class CategoryService {
     public void addACategory(Category category){
         repo.save(category);
     }
+
+    public void deleteCategory(int id){
+        repo.deleteById(id);
+    }
 }
