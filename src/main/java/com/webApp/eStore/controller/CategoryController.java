@@ -4,10 +4,7 @@ package com.webApp.eStore.controller;
 import com.webApp.eStore.model.Category;
 import com.webApp.eStore.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +24,10 @@ public class CategoryController {
     @GetMapping("/categories")
     public List<Category> getCategory(){
         return service.getAllCategory();
+    }
+
+    @PostMapping("/categories")
+    public void addCategory(@RequestBody Category category) {
+        service.addACategory(category);
     }
 }

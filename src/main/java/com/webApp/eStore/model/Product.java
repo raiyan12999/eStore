@@ -17,6 +17,7 @@ public class Product {
     private String description;
 
     @ManyToOne
+    @JoinColumn(name = "Category")
     private Category category;
     private Date releaseDate;
     private boolean availability;
