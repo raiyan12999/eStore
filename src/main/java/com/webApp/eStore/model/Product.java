@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
 import java.util.Date;
 
 @Component
@@ -29,6 +31,15 @@ public class Product {
     @OneToOne(mappedBy = "product")
     @JsonManagedReference
     private ProductDetails details;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "product_tag_table",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    @JsonBackReference
+    private ArrayList<Tag> tags = new ArrayList<>();
 
     public Product(String name, int price, String description, Category category, Date releaseDate, boolean availability, int quantity, String brand){
         this.name = name;
@@ -127,5 +138,13 @@ public class Product {
 
     public void setDetails(ProductDetails details) {
         this.details = details;
+    }
+
+    public ArrayList<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(ArrayList<Tag> tags) {
+        this.tags = tags;
     }
 }

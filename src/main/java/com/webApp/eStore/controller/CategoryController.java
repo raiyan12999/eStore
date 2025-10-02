@@ -31,9 +31,9 @@ public class CategoryController {
         service.addACategory(category);
     }
 
-    @DeleteMapping("categories/{id}")
-    public void deleteACategory(@PathVariable int id){
-        service.deleteCategory(id);
+    @DeleteMapping("categories/{ctg_id}")
+    public void deleteACategory(@PathVariable int ctg_id){
+        service.deleteCategory(ctg_id);
     }
 
 }
