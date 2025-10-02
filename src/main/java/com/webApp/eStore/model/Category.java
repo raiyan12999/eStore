@@ -1,5 +1,6 @@
 package com.webApp.eStore.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +19,7 @@ public class Category {
 
     // New field
     @OneToMany(mappedBy = "category", cascade= CascadeType.ALL)
+    @JsonManagedReference
     private List<Product> products = new ArrayList<>();
 
     // Empty constructor (needed for JPA)

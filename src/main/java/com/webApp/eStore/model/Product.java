@@ -1,5 +1,6 @@
 package com.webApp.eStore.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "Category")
+    @JsonBackReference
     private Category category;
     private Date releaseDate;
     private boolean availability;
