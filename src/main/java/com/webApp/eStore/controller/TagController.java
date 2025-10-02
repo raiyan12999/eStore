@@ -3,10 +3,7 @@ package com.webApp.eStore.controller;
 import com.webApp.eStore.model.Tag;
 import com.webApp.eStore.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +18,10 @@ public class TagController {
     @GetMapping("/tags")
     public List<Tag> getAllTags(){
         return service.getTags();
+    }
+
+    @PostMapping(value = "/tags", consumes = "application/json")
+    public void addATag(@RequestBody Tag tag){
+        service.addTag(tag);
     }
 }

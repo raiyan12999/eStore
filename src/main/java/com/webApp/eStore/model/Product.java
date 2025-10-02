@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Component
 @Entity
@@ -38,8 +39,8 @@ public class Product {
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
-    @JsonBackReference
-    private ArrayList<Tag> tags = new ArrayList<>();
+
+    private List<Tag> tags = new ArrayList<>();
 
     public Product(String name, int price, String description, Category category, Date releaseDate, boolean availability, int quantity, String brand){
         this.name = name;
@@ -140,11 +141,11 @@ public class Product {
         this.details = details;
     }
 
-    public ArrayList<Tag> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(ArrayList<Tag> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 }

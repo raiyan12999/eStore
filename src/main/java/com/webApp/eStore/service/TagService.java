@@ -16,4 +16,8 @@ public class TagService {
     public List<Tag> getTags() {
         return repo.findAll();
     }
+
+    public void addTag(Tag tag){
+        repo.save(tag);
+    }
 }

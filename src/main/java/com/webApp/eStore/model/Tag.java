@@ -1,10 +1,12 @@
 package com.webApp.eStore.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Component
 @Entity
@@ -16,8 +18,8 @@ public class Tag {
     private String tagName;
 
     @ManyToMany(mappedBy = "tags")
-    @JsonManagedReference
-    private ArrayList<Product> products = new ArrayList<>();
+    @JsonIgnore
+    private List<Product> products = new ArrayList<>();
 
     public Tag(){
 
@@ -45,11 +47,11 @@ public class Tag {
         this.tagName = name;
     }
 
-    public ArrayList<Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(ArrayList<Product> products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 }
